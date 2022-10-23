@@ -13,28 +13,28 @@ void swap(int *xp, int *yp)
 void bubbleSort(int arr[], int n)  
 {  
    int i,j;
-   bool flag=false;
+   bool any_swap_flag;
     for(i=0;i<n-1;i++)
     {
-      flag=false;
+      any_swap_flag=false;
       for(j=0;j<n-i-1;j++)
       {
         if(arr[j]>arr[j+1])
         {
           swap(&arr[j],&arr[j+1]);
-          flag=true;
+          any_swap_flag=true;
         }
       }
-      if(flag==false)
+      //if no swaps have been made
+      if(any_swap_flag==false)
         break;
     }
 }  
   
 /* Function to print an array */
 void printArray(int arr[], int size)  
-{  
-    int i;  
-    for (i = 0; i < size; i++)  
+{    
+    for (int i = 0; i < size; i++)  
         cout << arr[i] << " ";  
     cout << endl;  
 }  
